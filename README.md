@@ -2,6 +2,8 @@
 
 This project uses Docker Compose to quickly set up a MySQL database environment for development and testing.
 
+The tables contained are meant for the Available Sessions Service, which is part of the Study Session App.
+
 ## Features
 
 - Easy MySQL setup with Docker Compose
@@ -12,8 +14,8 @@ This project uses Docker Compose to quickly set up a MySQL database environment 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/Israel-Mendoza/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Israel-Mendoza/Study-Session-Subjects-Db.git
+   cd Study-Session-Subjects-Db
    ```
    
 2. Create a `.env` file in the root directory and add the following environment variable:
@@ -29,7 +31,7 @@ This project uses Docker Compose to quickly set up a MySQL database environment 
 4. Access the MySQL database using a MySQL client:
 
     - Host: `localhost`
-    - Port: `3306`
+    - Port: `3307`
     - Username: `root`
     - Password: The value you set in the `.env` file
 
