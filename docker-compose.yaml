@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    image: custom-mysql:1.0
+    container_name: mysql-available-sessions-db
+    build: . # Docker will look for a Dockerfile in the current directory
+    restart: always
+    environment:
+      # These environment variables configure the root user and database
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # Use the password from the .env file
+      MYSQL_DATABASE: available_sessions_db # This is the database that will be created
+    ports:
+      - "3307:3306" # Maps the host port 3307 to the container port 3306
+    volumes:
+      # This named volume persists the database data, so it won't be lost if the container is removed
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

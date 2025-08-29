@@ -1,0 +1,19 @@
+CREATE TABLE Users (
+    id INT NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE Subjects (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    is_archived BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+CREATE TABLE Topics (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    subject_id INT NOT NULL,
+    is_archived BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (subject_id) REFERENCES Subjects(id)
+);
